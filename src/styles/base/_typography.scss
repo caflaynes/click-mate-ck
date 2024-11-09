@@ -1,0 +1,41 @@
+// Importing necessary modules
+@use '../abstracts/variables' as var; // Import the variables module for custom variables like font sizes and weights
+@use '../abstracts/mixins' as mixins; // Import the mixins module for reusable styles
+@use 'sass:map'; // Import the Sass map module to use map-related functions like map.get
+
+// ========================
+// Generating Font Size and Weight Classes
+// ========================
+
+// Create font size classes for different types of text (e.g., display, heading, body, label)
+@include mixins.generate-font-size-classes('display', map.get(var.$font-sizes, display)); // For display text size
+@include mixins.generate-font-size-classes('heading', map.get(var.$font-sizes, heading)); // For heading text size
+@include mixins.generate-font-size-classes('body', map.get(var.$font-sizes, body)); // For body text size
+@include mixins.generate-font-size-classes('label', map.get(var.$font-sizes, label)); // For label text size
+
+// Create font weight classes for different font weights (e.g., bold, regular, etc.)
+@include mixins.generate-font-weight-classes(var.$font-weights); // Generate classes for different font weights
+
+// Generate styles for heading levels (e.g., H1, H2, etc.)
+@include mixins.generate-heading-styles; // Apply styles for heading elements like H1, H2, etc.
+
+// Generates font family and style classes based on the font families and their associated weights/styles
+@include mixins.generate-font-classes(var.$font-families);
+
+// ========================
+// Primary and Secondary Headings
+// ========================
+.fs-primary-heading { 
+   @include mixins.heading-style('primary-heading'); // Apply styles for primary headings
+   // Example Output: <h1 class="fs-primary-heading">Primary Heading</h1> styled with specific styles
+ }
+ .fs-secondary-heading { 
+   @include mixins.heading-style('secondary-heading'); // Apply styles for secondary headings
+   // Example Output: <h2 class="fs-secondary-heading">Secondary Heading</h2> styled differently
+ }
+ 
+// Generates color classes based on the color variables defined in the variables module
+@include mixins.generate-color-classes(var.$colors);
+
+// Generates spacing classes based on the spacing sizes defined in the variables module
+@include mixins.generate-spacing-classes(var.$spacing-sizes);

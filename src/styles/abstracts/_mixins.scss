@@ -1,0 +1,169 @@
+@use 'sass:map'; // Import the Sass map module to use map-related functions like map.get
+@use 'sass:string'; // For string manipulation functions like string.to-lower-case
+
+// ========================
+// Mixin for Generating Variables
+// ========================
+@mixin generate-variable-map($map, $prefix) {
+   @each $category, $sizes in $map {
+     @each $size-name, $size-value in $sizes {
+       // Create variables with the prefix like $fs-display-xxxl
+       $var-name: '#{$prefix}-#{$category}-#{$size-name}';
+       #{$var-name}: $size-value;
+     }
+   }
+ }
+ 
+// ========================
+// Mixin for Font Families Variables
+// ========================
+@mixin generate-font-family-variables($families, $prefix) {
+   @each $name, $value in $families {
+     // Create font family variables with the prefix like $ff-body
+     $var-name: '#{$prefix}-#{$name}';
+     #{$var-name}: #{$value};
+   }
+ }
+
+// ========================
+// Mixin for Generating CSS Variables from Maps
+// ========================
+@mixin generate-css-variables($map, $prefix) {
+   @each $category, $sizes in $map {
+     @each $size-name, $size-value in $sizes {
+       // Define CSS variables with a prefix, e.g., --fs-display-xxxl
+       --#{$prefix}-#{$category}-#{$size-name}: #{$size-value};
+     }
+   }
+ }
+ 
+// ========================
+// Mixin for Font Assignments as CSS Variables
+// ========================
+@mixin generate-font-family-css-variables($assignments, $prefix) {
+  @each $name, $value in $assignments {
+    // Define CSS variables with prefix, e.g., --ff-body
+    --#{$prefix}-#{$name}: #{$value};
+  }
+}
+ 
+ // ========================
+ // Mixin for Font Weights as CSS Variables
+ // ========================
+ @mixin generate-font-weight-css-variables($weights, $prefix) {
+   @each $name, $value in $weights {
+     // Define CSS variables with prefix, e.g., --fw-regular
+     --#{$prefix}-#{"#{$name}"}: #{$value};
+   }
+ }
+ 
+ // ========================
+ // Mixin for Colors as CSS Variables
+ // ========================
+ @mixin generate-color-css-variables($colors, $prefix) {
+   @each $name, $value in $colors {
+     // Define CSS variables with prefix, e.g., --clr-primary-400
+     --#{$prefix}-#{$name}: #{$value};
+   }
+ }
+ 
+ // ========================
+ // Mixin for Spacing as CSS Variables
+ // ========================
+ @mixin generate-spacing-css-variables($spacing, $prefix) {
+   @each $name, $value in $spacing {
+     // Define CSS variables with prefix, e.g., --spacing-size-100
+     --#{$prefix}-#{$name}: #{$value};
+   }
+ }
+
+ 
+// Mixin to generate font size classes with 'fs-' prefix
+@mixin generate-font-size-classes($level, $sizes) {
+  @each $name, $value in $sizes {
+    .fs-#{$level}-#{$name} {
+      font-size: $value; // Sets font size using CSS variable (var(--fs-#{$level}-#{$name}))
+      // .fs-display-xxxl { font-size: var(--fs-display-xxxl); } // 6rem
+      // .fs-display-xxl { font-size: var(--fs-display-xxl); } // 4.875rem
+      // .fs-heading-h1 { font-size: var(--fs-heading-h1); } // 3rem
+      // .fs-body-xxsmall { font-size: var(--fs-body-xxsmall); } // 0.8125rem
+    }
+  }
+}
+
+// Mixin to generate font weight classes with 'fw-' prefix
+@mixin generate-font-weight-classes($weights) {
+  @each $name, $value in $weights {
+    .fw-#{"#{$name}"} {
+      font-weight: $value; // Sets the font weight for the class
+      // .fw-regular { font-weight: 400; }
+      // .fw-bold { font-weight: 700; }
+    }
+  }
+}
+
+// Mixin to generate heading styles
+@mixin generate-heading-styles {
+  @for $i from 1 through 6 {
+    h#{$i} {
+      font-size: var(--fs-heading-h#{$i}); // Use interpolation to access the variable for each heading level
+      // h1 { font-size: var(--fs-heading-h1); } // 3rem
+      // h2 { font-size: var(--fs-heading-h2); } // 2rem
+      // h3 { font-size: var(--fs-heading-h3); } // 1.875rem
+      // h4 { font-size: var(--fs-heading-h4); } // 1.5rem
+      // h5 { font-size: var(--fs-heading-h5); } // 1.25rem
+      // h6 { font-size: var(--fs-heading-h6); } // 1rem
+    }
+  }
+}
+
+// Mixin to generate font style classes for each family and style
+@mixin generate-font-classes($font-families) {
+  @each $family, $styles in $font-families {
+    @each $style, $values in $styles {
+      // Extract weight and style values
+      $weight: map.get($values, weight);
+      $style-type: map.get($values, style);
+      
+      // Generate class and apply styles
+      .#{string.to-lower-case($family)}-#{string.to-lower-case($style)} {
+        font-family: #{$family};
+        font-weight: #{$weight};
+        font-style: #{$style-type};
+      }
+      
+      // Example output:
+      // .spectral-bold { font-family: "Spectral"; font-weight: 700; font-style: normal; }
+    }
+  }
+}
+
+// Mixin for heading styles that can be applied for different sizes
+@mixin heading-style($size) {
+  font-size: var(--fs-#{$size}); // Use the appropriate CSS variable based on the size
+  line-height: 1.2; // Custom line-height for headings
+}
+
+// Mixin to generate text and background color classes
+@mixin generate-color-classes($colors) {
+  @each $color, $value in $colors {
+    // Text color class
+    .txt-#{$color} {
+      color: $value; // Set the text color
+    }
+    
+    // Background color class
+    .bg-#{$color} {
+      background-color: $value; // Set the background color
+    }
+  }
+}
+
+// Mixin to generate spacing classes (e.g., padding-block)
+@mixin generate-spacing-classes($spacing-sizes) {
+  @each $size, $value in $spacing-sizes {
+    .pb-#{$size} {
+      padding-block: $value; // Generate the padding-block class for each size
+    }
+  }
+}
