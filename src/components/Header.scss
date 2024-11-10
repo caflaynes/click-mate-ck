@@ -1,3 +1,5 @@
+@use "../styles/abstracts/utils" as util;
+
 /* Container styling */
 .container {
    --max-width: 1078px; /* Maximum width of the container */
@@ -8,7 +10,7 @@
       100% - (var(--padding) * 2)
    ); /* Width based on max-width and padding */
    margin-inline: auto; /* Center container horizontally */
-   // outline: 1px solid gray; /* Debug outline (remove in production) */
+   @include util.gray-outline;
 }
 
 /* Slogan styling */
@@ -17,7 +19,7 @@
    justify-content: center;
    align-items: center;
    height: 30px; /* Fixed height for the slogan */
-   // outline: 1px solid gray; /* Debug outline (remove in production) */
+   @include util.gray-outline;
 
    p {
       font-family: "Times New Roman", Times, serif;
@@ -47,9 +49,11 @@
       align-items: center;
       height: 90px; /* Fixed height for brand section */
       margin-right: 20px; /* Space between brand and nav items */
+      @include util.gray-outline;
 
       img {
          height: 72px; /* Logo image height */
+         @include util.gray-outline;
       }
    }
 
@@ -58,6 +62,7 @@
       background: none;
       border: none;
       cursor: pointer;
+      @include util.gray-outline;
 
       @media screen and (max-width: 784px) {
          display: block; /* Display hamburger menu icon on small screens */
@@ -66,11 +71,13 @@
       img {
          width: 25px;
          height: 25px;
+         @include util.gray-outline;
       }
    }
 
    .primary-nav {
       display: flex;
+      @include util.gray-outline;
       .nav-list {
          display: flex;
          gap: 1rem; /* Space between nav items */
@@ -82,7 +89,6 @@
             color: #7b8c6a;
          }
       }
-      // outline: 1px solid gray; /* Debug outline (remove in production) */
 
       /* Tablet view (default hidden) */
       @media screen and (max-width: 784px) {
@@ -90,12 +96,15 @@
          position: absolute;
          top: 100px;
          left: 50%; /* Position the nav 50% from the left */
-         transform: translateX(-50%); /* Offset by half of its own width to truly center it */
+         transform: translateX(
+            -50%
+         ); /* Offset by half of its own width to truly center it */
          width: 100%; /* Match the width of the .navbar */
          background-color: white;
          border-radius: 8px;
          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
          z-index: 10;
+         @include util.gray-outline;
 
          /* Show primary-nav when 'data-visible' is set to 'true' */
          &[data-visible="true"] {

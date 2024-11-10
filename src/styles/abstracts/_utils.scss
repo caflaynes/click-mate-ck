@@ -1,0 +1,9 @@
+
+$outline-visible: false !default;
+
+// Define the mixin for the gray outline
+@mixin gray-outline {
+   @if $outline-visible {
+     outline: 1px solid gray;
+   }
+ }
