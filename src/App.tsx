@@ -1,15 +1,20 @@
 // src/App.tsx
 import React from 'react';
 import './App.scss';
-import Header from './components/Header';
+import Slogan from './components/Slogan';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <Header
-        slogan="COLLECT MOMENTS, NOT THINGS"
-        logoSrc="logo.svg"
-      />
+      <header>
+        <Slogan slogan="COLLECT MOMENTS, NOT THINGS" />
+        <Navbar logoSrc="logo.svg"/>
+      </header>
+      <main>
+        <Hero />
+      </main>
     </div>
   );
 };

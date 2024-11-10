@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import "./Header.scss";
+import "./Navbar.scss";
 import menuIcon from "../assets/icons/menu/menu.svg";
 import closeIcon from "../assets/icons/menu/cross.svg";
 
-interface HeaderProps {
-   slogan: string;
+interface NavbarProps {
    logoSrc: string;
 }
 
-const Header: React.FC<HeaderProps> = ({ slogan, logoSrc }) => {
+const Navbar: React.FC<NavbarProps> = ({logoSrc }) => {
    const [isNavVisible, setIsNavVisible] = useState(false);
 
    // Toggle nav visibility
@@ -17,11 +16,7 @@ const Header: React.FC<HeaderProps> = ({ slogan, logoSrc }) => {
    };
 
    return (
-      <header>
-         <div className="container">
-            <div className="nav-slogan">
-               <p>{slogan}</p>
-            </div>
+         <div className="nav-container">
             <nav className="navbar" role="navigation">
                <a className="nav-brand" href="#" aria-label="Home">
                   <img src={logoSrc} alt="ClickMate Logo" />
@@ -40,8 +35,7 @@ const Header: React.FC<HeaderProps> = ({ slogan, logoSrc }) => {
                </button>
             </nav>
          </div>
-      </header>
    );
 };
 
-export default Header;
+export default Navbar;
