@@ -1,30 +1,298 @@
-header {
-   width: 100%;
+// path: src/components/Header.scss
+/* Container styling */
+.container {
+   --max-width: 1078px; /* Maximum width of the container */
+   --padding: 2rem; /* Padding for internal spacing */
+
+   width: min(var(--max-width), 100% - (var(--padding) * 2)); /* Width based on max-width and padding */
+   margin-inline: auto; /* Center container horizontally */
+   outline: 1px solid gray; /* Debug outline (remove in production) */
 }
 
-.slogan {
+/* Slogan styling */
+.nav-slogan {
    display: flex;
-   align-items: center;
    justify-content: center;
-
-   height: 30px;
-   outline: 1px solid gray;
+   align-items: center;
+   height: 30px; /* Fixed height for the slogan */
+   outline: 1px solid gray; /* Debug outline (remove in production) */
+   
    p {
       font-family: "Times New Roman", Times, serif;
-      // font-size: clamp(0.875rem, 2vw, 1rem);
+      font-size: var(--fs-body-small); /* Font size for slogan text */
       font-weight: 500;
       color: #4f5b45;
-      letter-spacing: 0.03125rem; // 0.5px
+      letter-spacing: 0.03125rem; /* 0.5px letter spacing */
+   }
+
+   @media screen and (max-width: 768px) {
+      p {
+         font-size: var(--fs-body-xsmall); /* Smaller font size on small screens */
+      }
    }
 }
 
+/* Navbar styling */
 .navbar {
    display: flex;
-   align-items: center;
    justify-content: space-between;
-   
-   outline: 1px solid gray;
+   align-items: center;
+   padding-inline: 20px; /* Horizontal padding for navbar */
+
+   .nav-brand {
+      display: flex;
+      align-items: center;
+      height: 90px; /* Fixed height for brand section */
+      margin-right: 20px; /* Space between brand and nav items */
+
+      img {
+         height: 72px; /* Logo image height */
+      }
+   }
+
+   .hamburger {
+      display: none; /* Hide hamburger menu by default */
+   }
+
+   .primary-nav {
+      .nav-list {
+         display: flex;
+         gap: 1rem; /* Space between nav items */
+         outline: 1px solid gray; /* Debug outline (remove in production) */
+         
+         li a {
+            color: var(--clr-primary-400); /* Link color */
+         }
+         li:first-child a {
+            color: #7b8c6a;
+         }
+      }
+   }
+
+   @media screen and (max-width: 768px) {
+      .nav-brand {
+         img {
+            height: 64px; /* Smaller logo image height on small screens */
+         }
+      }
+   }
+   @media screen and (max-width: 784px) {
+      .hamburger {
+         display: block; /* Display hamburger menu icon */
+      }
+      .primary-nav {
+         display: none;
+      }
+   }
 }
+
+/* Header.scss */
+
+/* Header.scss */
+
+/* Header.scss */
+
+// header {
+//    width: 100%;
+//    background-color: #f8f9fa;
+//    padding: 1rem 0;
+//    text-align: center; /* Center-aligns text by default within header */
+
+//    /* Slogan styling */
+//    .nav-slogan {
+//       font-size: 0.9rem;
+//       color: #4f5b45;
+//       margin-bottom: 0.5rem; /* Adds space between slogan and navbar */
+
+//       p {
+//          margin: 0;
+//          letter-spacing: 0.5px;
+//       }
+
+//       /* Larger font size on medium screens */
+//       @media (min-width: 768px) {
+//          font-size: 1rem;
+//       }
+//    }
+
+//    .container {
+//       max-width: 1078px;
+//       width: 100%;
+//       margin-inline: auto;
+//       padding: 0 1rem;
+
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       gap: 1rem;
+
+//       @media (min-width: 768px) {
+//          flex-direction: row;
+//          justify-content: space-between;
+//          padding: 0 2rem;
+//       }
+//    }
+
+//    /* Navbar styling */
+//    .navbar {
+//       display: flex;
+//       align-items: center;
+//       justify-content: space-between;
+//       width: 100%;
+
+//       .nav-brand img {
+//          height: 50px;
+//          max-width: 100%;
+//       }
+//    }
+
+//    /* Primary navigation styling */
+//    .primary-nav {
+//       .nav-list {
+//          display: flex;
+//          gap: 1rem;
+//          flex-wrap: wrap;
+//          justify-content: center;
+//          padding: 0;
+//          margin: 0;
+//          list-style-type: none;
+
+//          @media (max-width: 768px) {
+//             flex-direction: column;
+//             gap: 0.5rem;
+//          }
+//       }
+
+//       .nav-item {
+//          .nav-link {
+//             text-decoration: none;
+//             color: #333;
+//             font-weight: bold;
+//             padding: 0.5rem;
+
+//             &:hover {
+//                color: #4f5b45;
+//             }
+//          }
+//       }
+//    }
+// }
+
+// /* Responsive adjustments for smaller screens */
+// @media (max-width: 768px) {
+//    .navbar {
+//       flex-direction: column;
+//       gap: 0.5rem;
+//       align-items: center;
+//    }
+
+//    .primary-nav {
+//       .nav-list {
+//          flex-direction: column;
+//          gap: 0.5rem;
+//          align-items: center;
+//       }
+//    }
+// }
+
+
+
+
+// .slogan {
+//    display: flex;
+//    align-items: center;
+//    justify-content: center;
+//    // height: 30px; /* Optional height */
+//    width: 100%; /* Full width for alignment */
+//    outline: 1px solid gray;
+
+//    p {
+//       font-family: "Times New Roman", Times, serif;
+//       font-weight: 500;
+//       color: #4f5b45;
+//       letter-spacing: 0.03125rem; /* 0.5px */
+//       margin: 0; /* Remove default margin */
+//    }
+// }
+
+// .navbar {
+//    display: flex;
+//    align-items: center;
+//    justify-content: space-between;
+//    width: 100%; /* Full width for alignment */
+//    outline: 1px solid gray;
+// }
+
+// .logo img {
+//    max-width: 196.031px;
+//    height: auto;
+//    margin-right: 2rem;
+//    margin-left: 2rem;
+// }
+
+// .primary-nav {
+//    margin-right: 2rem;
+//    margin-left: 2rem;
+
+//    .nav-list {
+//       display: flex;
+//       gap: 2rem;
+//    }
+// }
+
+
+
+
+// header {
+//    width: 100%;
+// }
+
+// .container {
+//    --max-width: 1078px; // Maximum width of the container
+//    --padding: 2rem; // Padding variable for internal spacing
+
+//    width: min(var(--max-width), 100% - (var(--padding) * 2)); // Set width based on max-width and padding
+//    margin-inline: auto; // Center the container horizontally
+//    outline: 1px solid gray; // Outline for debugging (remove in production)
+// }
+
+// .slogan {
+//    display: flex;
+//    align-items: center;
+//    justify-content: center; 
+//    height: 30px;
+//    outline: 1px solid gray;
+//    p {
+//       font-family: "Times New Roman", Times, serif;
+//       font-weight: 500;
+//       color: #4f5b45;
+//       letter-spacing: 0.03125rem; // 0.5px
+//    }
+// }
+
+// .navbar {
+//    display: flex;
+//    align-items: center;
+//    justify-content: space-between;
+
+   
+//    outline: 1px solid gray;
+// }
+// .logo img {
+//    max-width: 196.031px;
+//    height: auto;
+//    margin-right: 2rem;
+//    margin-left: 2rem;
+// }
+
+// .primary-nav {
+//    margin-right: 2rem;
+//    margin-left: 2rem;
+//    .nav-list {
+//       display: flex;
+//       gap: 2rem;
+//    }
+// }
 
 // // src/components/Header.scss
 // :root {
@@ -43,20 +311,20 @@ header {
 //    outline: 1px solid gray;
 // }
 
-// // .slogan {
-// //    display: flex;
-// //    align-items: center;
-// //    justify-content: center;
-// //    height: calc(var(--header-height) * 0.25); // 30px
-// //    outline: 1px solid gray;
-// //    p {
-// //       font-family: "Times New Roman", Times, serif;
-// //       font-size: clamp(0.875rem, 2vw, 1rem);
-// //       font-weight: 500;
-// //       color: #4f5b45;
-// //       letter-spacing: 0.03125rem; // 0.5px
-// //    }
-// // }
+// .slogan {
+//    display: flex;
+//    align-items: center;
+//    justify-content: center;
+//    height: calc(var(--header-height) * 0.25); // 30px
+//    outline: 1px solid gray;
+//    p {
+//       font-family: "Times New Roman", Times, serif;
+//       font-size: clamp(0.875rem, 2vw, 1rem);
+//       font-weight: 500;
+//       color: #4f5b45;
+//       letter-spacing: 0.03125rem; // 0.5px
+//    }
+// }
 
 // .nav-wrapper {
 //    display: flex;
@@ -70,51 +338,51 @@ header {
 //       width: auto;
 //       height: 100%;
 //       outline: 1px solid gray;
-//       // img {
-//       //    height: 80px;
-//       //    width: 196.031px;
-//       //    min-height: 80px;
-//       //    min-width: 196.031px;
-//       // }
+//       img {
+//          height: 80px;
+//          width: 196.031px;
+//          min-height: 80px;
+//          min-width: 196.031px;
+//       }
 //    }
-//    // .primary-nav {
-//    //    height: 100%;
-//    //    width: auto;
-//    //    display: flex;
-//    //    align-items: center;
-//    //    outline: 1px solid gray;
-//    //    .nav-list {
-//    //       display: flex;
-//    //       align-items: center;
-//    //       gap: 2rem; // 32px
-//    //       padding: 0 32px;
-//    //       outline: 1px solid gray;
-//    //       li {
-//    //          display: flex;
-//    //       }
-//    //       li a {
-//    //          font-size: clamp(0.875rem, 2vw, 1rem); // min 14px, max 16px
-//    //          outline: 1px solid gray;
-//    //          white-space: nowrap;
-//    //       }
-//    //       li:first-child a {
-//    //          color: #7b8c6a;
-//    //       }
-//    //    }
-//    // }
+//    .primary-nav {
+//       height: 100%;
+//       width: auto;
+//       display: flex;
+//       align-items: center;
+//       outline: 1px solid gray;
+//       .nav-list {
+//          display: flex;
+//          align-items: center;
+//          gap: 2rem; // 32px
+//          padding: 0 32px;
+//          outline: 1px solid gray;
+//          li {
+//             display: flex;
+//          }
+//          li a {
+//             font-size: clamp(0.875rem, 2vw, 1rem); // min 14px, max 16px
+//             outline: 1px solid gray;
+//             white-space: nowrap;
+//          }
+//          li:first-child a {
+//             color: #7b8c6a;
+//          }
+//       }
+//    }
 // }
 
-// // @media screen and (max-width: 868px) {
-// //    .nav-list {
-// //       gap: 0.1rem; // 8px
-// //       li a {
-// //          font-size: clamp(0.625rem, 2vw, 0.75rem); // min 10px, max 12px
-// //       }
-// //    }
-// // }
+// @media screen and (max-width: 868px) {
+//    .nav-list {
+//       gap: 0.1rem; // 8px
+//       li a {
+//          font-size: clamp(0.625rem, 2vw, 0.75rem); // min 10px, max 12px
+//       }
+//    }
+// }
 
-// // @media screen and (max-width: 768px) {
-// //    .nav-list {
-// //       display: none !important;
-// //    }
-// // }
+// @media screen and (max-width: 768px) {
+//    .nav-list {
+//       display: none !important;
+//    }
+// }

@@ -1,0 +1,92 @@
+/* Base styles */
+body {
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 20px;
+ }
+ 
+ h1 {
+   margin: 0;
+   font-size: 1.5rem;
+ }
+ 
+ p {
+   margin: 5px 0 15px;
+ }
+ 
+ /* Fixed-width Container */
+ .custom-container {
+   width: 100%;
+   max-width: 1320px;
+   margin: 0 auto;
+   padding: 0 15px;
+   outline: 1px solid red;
+ }
+ 
+ /* Fluid Container */
+ .custom-container-fluid {
+   width: 100%;
+   padding: 0 15px;
+   outline: 1px solid red;
+
+ }
+ 
+ /* Responsive Containers */
+ .custom-container-sm {
+   width: 100%;
+   max-width: 540px;
+   margin: 0 auto;
+   padding: 0 15px;
+   outline: 1px solid red;
+
+ }
+ 
+ .custom-container-md {
+   width: 100%;
+   max-width: 720px;
+   margin: 0 auto;
+   padding: 0 15px;
+   outline: 1px solid red;
+
+ }
+ 
+ .custom-container-lg {
+   width: 100%;
+   max-width: 960px;
+   margin: 0 auto;
+   padding: 0 15px;
+   outline: 1px solid red;
+
+ }
+ 
+ /* Media queries for breakpoints */
+ @media (min-width: 576px) {
+   .custom-container-sm {
+     max-width: 540px;
+   }
+ }
+ 
+ @media (min-width: 768px) {
+   .custom-container-md {
+     max-width: 720px;
+   }
+ }
+ 
+ @media (min-width: 992px) {
+   .custom-container-lg {
+     max-width: 960px;
+   }
+ }
+ 
+ @media (min-width: 1200px) {
+   .custom-container {
+     max-width: 1140px;
+   }
+ }
+ 
+ @media (min-width: 1400px) {
+   .custom-container {
+     max-width: 1320px;
+   }
+ }
+ 

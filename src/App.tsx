@@ -6,7 +6,10 @@ import Header from './components/Header';
 const App: React.FC = () => {
   return (
     <div className="App">
-      <Header />
+      <Header
+        slogan="COLLECT MOMENTS, NOT THINGS"
+        logoSrc="logo.svg"
+      />
     </div>
   );
 };
