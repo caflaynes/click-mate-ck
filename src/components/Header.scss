@@ -62,6 +62,7 @@
       background: none;
       border: none;
       cursor: pointer;
+      z-index: 20; /* Ensure it's above the primary-nav */
       @include util.gray-outline;
 
       @media screen and (max-width: 784px) {
@@ -92,9 +93,13 @@
 
       /* Tablet view (default hidden) */
       @media screen and (max-width: 784px) {
-         display: none;
+         // display: none;
+         display: block;
          position: absolute;
-         top: 100px;
+         // top: 100px;
+         top: -100%;
+         transition: top 0.3s ease, opacity 0.3s ease; /* Slide-down and fade-in effect */
+         opacity: 0; /* Initially hidden */
          left: 50%; /* Position the nav 50% from the left */
          transform: translateX(
             -50%
@@ -103,12 +108,14 @@
          background-color: white;
          border-radius: 8px;
          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-         z-index: 10;
+         z-index: 19;
          @include util.gray-outline;
 
          /* Show primary-nav when 'data-visible' is set to 'true' */
          &[data-visible="true"] {
-            display: block;
+            // display: block;
+            top: 100px;
+            opacity: 1;
          }
 
          .nav-list {
