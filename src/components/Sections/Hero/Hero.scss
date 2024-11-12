@@ -1,0 +1,90 @@
+@use "./../../../styles/abstracts/utils" as util;
+
+.hero {
+   position: relative;
+   height: 559px;
+   // @include util.gray-outline;
+
+   .bg-layer-1 {
+      width: 100%;
+      background-color: #6d7c5f;
+      height: 300px;
+      @include util.gray-outline;
+
+      position: absolute;
+      bottom: 0;
+      z-index: 1;
+   }
+
+   .bg-layer-2 {
+      width: 97%;
+      margin-inline: auto;
+      background-color: white;
+      height: 255px;
+      @include util.gray-outline;
+
+      position: absolute;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+   }
+
+   .bg-layer-3 {
+      width: 94%;
+      height: 487.328px;
+      overflow: hidden;
+
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         object-position: center;
+         border-radius: 8px;
+      }
+   }
+
+   .hero-wrapper {
+      display: none;
+   }
+
+   // .hero-wrapper {
+   //    width: 800px;
+   //    display: flex;
+   //    justify-content: center;
+   //    @include util.gray-outline;
+
+   //    .hero-content {
+   //       max-width: 100%;
+   //       padding-inline: 1.5rem;
+   //       margin-inline: 2rem;
+
+   //       @include util.gray-outline;
+
+   //       display: flex;
+   //       flex-direction: column;
+   //       justify-content: center;
+   //       align-items: center;
+
+   //       position: absolute;
+   //       bottom: 30px;
+   //       z-index: 4;
+
+   //       background-color: white;
+   //       outline: 2px solid #41493c;
+   //       padding-block-end: 2rem;
+   //       opacity: 0.8;
+
+   //       img {
+   //          height: 75px;
+   //          margin-block: 1rem;
+   //       }
+   //    }
+   // }
+}

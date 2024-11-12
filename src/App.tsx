@@ -1,9 +1,9 @@
 // src/App.tsx
 import React from 'react';
 import './App.scss';
-import Slogan from './components/Slogan';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
+import Slogan from './components/Layouts/Slogan/Slogan';
+import Navbar from './components/Layouts/Navbar/Navbar';
+import Hero from './components/Sections/Hero/Hero';
 
 const App: React.FC = () => {
   return (
@@ -13,7 +13,7 @@ const App: React.FC = () => {
         <Navbar logoSrc="logo.svg"/>
       </header>
       <main>
-        <Hero />
+        <Hero helloUrl="src\assets\images\hero\hello.svg" />
       </main>
     </div>
   );
