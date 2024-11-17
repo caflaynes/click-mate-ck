@@ -13,7 +13,7 @@ const App: React.FC = () => {
       </header>
       <Navbar logoSrc="logo.svg"/>
       <main>
-        <Hero helloUrl="src\assets\images\hero\hello.svg" />
+        <Hero helloUrl="./assets/images/hero/hello.svg" />
       </main>
     </div>
   );
