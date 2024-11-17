@@ -5,6 +5,7 @@ import Slogan from './components/Layouts/Slogan/Slogan';
 import Navbar from './components/Layouts/Navbar/Navbar';
 import Hero from './components/Sections/Hero/Hero';
 import logo from './assets/images/logo.svg';
+import hello from './assets/images/hero/hello.svg';
 
 const App: React.FC = () => {
   return (
@@ -14,7 +15,7 @@ const App: React.FC = () => {
       </header>
       <Navbar logoSrc={logo}/>
       <main>
-        <Hero helloUrl="./assets/images/hero/hello.svg" />
+        <Hero helloUrl={hello} />
       </main>
     </div>
   );
