@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.scss";
 import menuIcon from "../../../assets/icons/menu/menu.svg";
 import closeIcon from "../../../assets/icons/menu/cross.svg";
@@ -39,11 +40,11 @@ const Navbar: React.FC<NavbarProps> = ({ logoSrc }) => {
         </a>
         <div className="nav-primary" data-visible={isNavVisible ? "true" : undefined}>
           <ul className="nav-list kollektif-bold" role="list">
-            <li><a href="#" data-text="HOME">HOME</a></li>
-            <li><a href="#">DIGITAL CAMERAS</a></li>
-            <li><a href="#">HOW IT WORKS</a></li>
-            <li><a href="#">PRICING</a></li>
-            <li><a href="#">CONTACT US</a></li>
+            <li><Link to="/" data-text="HOME">HOME</Link></li>
+            <li><Link to="/digital-cameras">DIGITAL CAMERAS</Link></li>
+            <li><Link to="/how-it-works">HOW IT WORKS</Link></li>
+            <li><Link to="/pricing">PRICING</Link></li>
+            <li><Link to="/contact-us">CONTACT US</Link></li>
           </ul>
         </div>
 
