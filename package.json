@@ -2,7 +2,7 @@
    "name": "vite-project",
    "private": true,
    "version": "0.0.0",
-   "homepage": "https://caflaynes.github.io/click-mate-ck",
+   "homepage": "https://caflaynes.github.io/click-mate-ck/",
    "type": "module",
    "scripts": {
       "dev": "vite",
