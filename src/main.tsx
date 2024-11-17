@@ -10,6 +10,7 @@ createRoot(document.getElementById('root')!).render(
     <Router
       future={{
         v7_startTransition: true, // Enable v7_startTransition
+        v7_relativeSplatPath: true, // Enable v7_relativeSplatPath for splat path resolution
       }}
     >
       <App />
