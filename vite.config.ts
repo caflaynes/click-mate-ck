@@ -11,5 +11,8 @@ export default defineConfig({
         api: 'modern-compiler' // or "modern"
       }
     }
+  },
+  build: {
+    outDir: 'build', // This sets the output directory to "build"
   }
 })
