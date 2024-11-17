@@ -9,33 +9,27 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ helloUrl }) => {
    return (
       <div className="hero">
-         <div className="bg-layer-1"></div>
-         <div className="bg-layer-2"></div>
-         <div className="bg-layer-3">
-            <img src="src\assets\images\hero\green.svg" alt="" />
-         </div>
-         <div className="hero-wrapper">
-            <div className="hero-content">
-               <img src={helloUrl} alt="Hello!" height="70" />
+         <div className="hero-background"></div>
+         <div className="hero-content">
+            <img src={helloUrl} alt="Hello!" height="70" />
 
-               <h2 className="fs-heading-h2 kollektif-bold">
-                  Welcome to ClickMate Rentals!
-               </h2>
+            <h2 className="fs-heading-h2 kollektif-bold">
+               Welcome to ClickMate Rentals!
+            </h2>
 
-               <p>
-                  Capture every moment effortlessly with our high-quality,
-                  affordable cameras. Our flexible rental options are designed
-                  to help you find the perfect camera for your projects and
-                  events, allowing you to focus on what truly matters— creating
-                  unforgettable memories.
-               </p>
+            <p>
+               Capture every moment effortlessly with our high-quality,
+               affordable cameras. Our flexible rental options are designed to
+               help you find the perfect camera for your projects and events,
+               allowing you to focus on what truly matters— creating
+               unforgettable memories.
+            </p>
 
-               <h3 className="fs-heading-h5 kollektif-semibold">
-                  Ready to capture your shot?
-               </h3>
-               <p>Click the button below to get started!</p>
-               <button className="button">Rent a Camera</button>
-            </div>
+            <h3 className="fs-heading-h5 kollektif-semibold">
+               Ready to capture your shot?
+            </h3>
+            <p>Click the button below to get started!</p>
+            <button className="button">Rent a Camera</button>
          </div>
       </div>
    );

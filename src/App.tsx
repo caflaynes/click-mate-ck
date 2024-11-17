@@ -10,8 +10,8 @@ const App: React.FC = () => {
     <div className="App">
       <header>
         <Slogan slogan="COLLECT MOMENTS, NOT THINGS" />
-        <Navbar logoSrc="logo.svg"/>
       </header>
+      <Navbar logoSrc="logo.svg"/>
       <main>
         <Hero helloUrl="src\assets\images\hero\hello.svg" />
       </main>
