@@ -4,6 +4,7 @@ import './App.scss';
 import Slogan from './components/Layouts/Slogan/Slogan';
 import Navbar from './components/Layouts/Navbar/Navbar';
 import Hero from './components/Sections/Hero/Hero';
+import logo from './assets/images/logo.svg';
 
 const App: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ const App: React.FC = () => {
       <header>
         <Slogan slogan="COLLECT MOMENTS, NOT THINGS" />
       </header>
-      <Navbar logoSrc="logo.svg"/>
+      <Navbar logoSrc={logo}/>
       <main>
         <Hero helloUrl="./assets/images/hero/hello.svg" />
       </main>
